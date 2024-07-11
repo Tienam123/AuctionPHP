@@ -1,0 +1,15 @@
+{
+  "name": "deworkerpro/demo-action",
+  "description": "Auction with SlimPHP and ReactJS",
+  "type": "project",
+  "authors": [
+    {
+      "name": "VladyslavHonchar"
+    }
+  ],
+  "require": {
+    "php": "8.2",
+    "slim/slim": "^4.14",
+    "slim/psr7": "^1.7"
+  }
+}
