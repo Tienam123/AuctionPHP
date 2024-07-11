@@ -1,17 +1,15 @@
 <?php
 declare(strict_types=1);
 
-use Slim\Factory\AppFactory;
-use Slim\Psr7\Request;
-use Slim\Psr7\Response;
+use Psr\Container\ContainerInterface;
+use Slim\App;
 
+http_response_code(500);
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = AppFactory::create();
+/** @var ContainerInterface $container */
+$container = require __DIR__ . '/../config/container.php';
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write('{}');
-    return $response->withHeader('Content-Type', 'application/json');
-});
-
+/** @var App $app */
+$app = (require __DIR__ . '/../config/app.php')($container);
 $app->run();
