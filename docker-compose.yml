@@ -26,9 +26,9 @@ services:
     environment:
       APP_DEBUG: 1
       APP_ENV: dev
+      PHP_IDE_CONFIG: serverName=API
     volumes:
       - ./api:/app
-
   api-php-cli:
     build:
       context: api/docker/development/php-cli
